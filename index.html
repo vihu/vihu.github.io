@@ -10423,8 +10423,10 @@ This project also turned out to be the first package I published on [[hex.pm|htt
 <div _canonical_uri="shared/resume.pdf" created="20210711065439752" modified="20210711082507827" tags="shared Contents" title="Resume" type="application/pdf">
 <pre></pre>
 </div>
-<div created="20210712002742128" modified="20210712003040624" tags="Work" title="Snippets">
-<pre>* Get consensus member names
+<div created="20210712002742128" modified="20210712003111271" tags="Work" title="Snippets">
+<pre>!! Collection of some helpful snippets for use with the Helium blockchain
+
+* Get consensus member names
 
 ```
 	lists:map(fun blockchain_utils:addr2name/1, element(2, blockchain_ledger_v1:consensus_members(blockchain:ledger()))).
