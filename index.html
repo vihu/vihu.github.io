@@ -215,6 +215,8 @@ Error message and password prompt
 
 <li>kdtree - Simple k-d tree in Erlang</li>
 
+<li>One-liners</li>
+
 <li>Projects</li>
 
 <li>Resume</li>
@@ -10222,7 +10224,7 @@ Projects</pre>
 <div created="20210711082513449" modified="20210711235251916" title="$:/state/toc/Contents-Projects-1637712383">
 <pre>close</pre>
 </div>
-<div created="20210712000958555" modified="20210712002206674" title="$:/state/toc/Contents-Projects-1843068618">
+<div created="20210712000958555" modified="20210712000959289" title="$:/state/toc/Contents-Projects-1843068618">
 <pre>close</pre>
 </div>
 <div created="20210711081248156" modified="20210711081248602" title="$:/state/toc/TableOfContent-Projects-1637712383">
@@ -10234,7 +10236,7 @@ Projects</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210712002208071" list="Introduction Projects" modified="20210712002223860" title="$:/StoryList">
+<div created="20210712002715333" list="One-liners Introduction Projects" modified="20210712002715333" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210711063517735" modified="20210711072645676" title="$:/theme">
@@ -10386,7 +10388,7 @@ Please feel free to install it, hack it, share it!
 [[link to repo|https://github.com/vihu/gogo]]
 </pre>
 </div>
-<div created="20210711235824359" modified="20210712002344486" tags="" title="Introduction">
+<div created="20210711235824359" modified="20210712000056052" tags="" title="Introduction">
 <pre>Hi! Welcome to my live notes!
 
 This is my attempt at trying to capture my thoughts and ideas in a digital format as I'm tired of maintained paper-based notes.
@@ -10395,7 +10397,7 @@ I know some web technologies but by no means I'm a full-stack person but I have 
 
 This is powered using [[tiddlywiki|https://tiddlywiki.com]] which I'm experimenting with, let's see how this goes!
 
-,,PS: You can edit whatever you like locally on your browser but it won't change on the server side (my [[gh repo|https://github.com/vihu/vihu.github.io]]). If you get lost unintentionally just hit refresh and it should bring you back to the &quot;home&quot; view.,,</pre>
+,,PS: You can edit whatever you like locally on your browser but it won't change on the server side (my [[gh repo|https://github.com/vihu/vihu.github.io]]).,,</pre>
 </div>
 <div created="20210711234601846" modified="20210711235231426" tags="Projects" title="kdtree - Simple k-d tree in Erlang">
 <pre>I believe this was the absolute first project I ever did in Erlang and instantly fell in love with the simplicity of it, the functional syntax, pattern matching and the mathematical friendliness of writing code in it. You can read all about k-dimensional trees [[here|https://en.wikipedia.org/wiki/K-d_tree]].
@@ -10405,6 +10407,41 @@ Mind you that this library is NOT an OTP application, I was still getting famili
 This project also turned out to be the first package I published on [[hex.pm|https://hex.pm/]], it's available [[here|https://hex.pm/packages/kdtree]]. 
 
 [[Link to repo|https://github.com/helium/kdtree]]</pre>
+</div>
+<div created="20210712002742128" modified="20210712002848452" tags="Work" title="One-liners">
+<pre>! Useful one-liners:
+
+!! Get consensus member names:
+
+	```
+	lists:map(fun blockchain_utils:addr2name/1, element(2, blockchain_ledger_v1:consensus_members(blockchain:ledger()))).
+	```
+- Get given`type` of transaction(s) in the `lastX` number of blocks
+
+```
+F = fun(LastX, Type) -&gt;
+    C = blockchain_worker:blockchain(),
+    {ok, Current} = blockchain:height(C),
+    Range = lists:seq(Current - LastX, Current),
+    Blocks = [{I, element(2, blockchain:get_block(I, C))} || I &lt;- Range],
+    Txns = lists:map(fun({I, B}) -&gt; Ts = blockchain_block:transactions(B), {I, Ts}  end, Blocks),
+    X = lists:map(fun({I, Ts}) -&gt; {I, lists:filter(fun(T) -&gt; blockchain_txn:type(T) == Type  end, Ts)}  end, Txns),
+    lists:filter(fun({I, List}) -&gt; length(List) /= 0  end, X)
+end.
+```
+
+- Check if `LastX` blocks match a give txn `Hash`
+```
+F2 = fun(LastX, Hash) -&gt;
+    C = blockchain_worker:blockchain(),
+    {ok, Current} = blockchain:height(C),
+    Range = lists:seq(Current - LastX, Current),
+    Blocks = [{I, element(2, blockchain:get_block(I, C))} || I &lt;- Range],
+    Txns = lists:map(fun({I, B}) -&gt; Ts = blockchain_block:transactions(B), {I, Ts}  end, Blocks),
+    X = lists:map(fun({I, Ts}) -&gt; {I, lists:filter(fun(T) -&gt; blockchain_txn:hash(T) == Hash  end, Ts)}  end, Txns),
+    lists:filter(fun({I, List}) -&gt; length(List) /= 0  end, X)
+end.
+```</pre>
 </div>
 <div created="20210711075543208" modified="20210712000104255" tags="shared Contents" title="Projects">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
