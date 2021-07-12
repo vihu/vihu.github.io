@@ -10408,14 +10408,15 @@ This project also turned out to be the first package I published on [[hex.pm|htt
 
 [[Link to repo|https://github.com/helium/kdtree]]</pre>
 </div>
-<div created="20210712002742128" modified="20210712002905117" tags="Work" title="One-liners">
+<div created="20210712002742128" modified="20210712002924856" tags="Work" title="One-liners">
 <pre>! Useful one-liners
 
-!! Get consensus member names:
+!! Get consensus member 
 
-	```
+```
 	lists:map(fun blockchain_utils:addr2name/1, element(2, blockchain_ledger_v1:consensus_members(blockchain:ledger()))).
-	```
+```
+
 !! Get given`type` of transaction(s) in the `lastX` number of blocks
 
 ```
@@ -10431,6 +10432,7 @@ end.
 ```
 
 !! Check if `LastX` blocks match a give txn `Hash`
+
 ```
 F2 = fun(LastX, Hash) -&gt;
     C = blockchain_worker:blockchain(),
