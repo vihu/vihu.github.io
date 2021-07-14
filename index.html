@@ -10330,7 +10330,7 @@ Projects
 <div created="20210712051118891" creator="v" modified="20210712051119150" modifier="vih" title="$:/status/UserName">
 <pre>vihu</pre>
 </div>
-<div created="20210714062437481" creator="vihu" list="Introduction Projects miner NIFs [[Find me!]]" modified="20210714062548513" modifier="vihu" title="$:/StoryList">
+<div created="20210714062437481" creator="vihu" list="Introduction Projects miner NIFs NIF [[Find me!]]" modified="20210714062557821" modifier="vihu" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210711063517735" modified="20210711072645676" title="$:/theme">
@@ -10672,10 +10672,14 @@ This is one of my current [[Work Projects]]! Me and my colleagues at [[Helium|ht
 
 {{Footer}}</pre>
 </div>
-<div created="20210713005539815" creator="vihu" modified="20210713044427114" modifier="vihu" tags="shared meta" title="NIF">
+<div created="20210713005539815" creator="vihu" modified="20210714063250503" modifier="vihu" tags="shared meta" title="NIF">
 <pre>NIF stands for ''Native Implemented Functions'', essentially allowing one to invoke a function from a different language in another language. You can read all about Erlang NIFs [[here|https://erlang.org/doc/tutorial/nif.html]].
 
-I primarily write Erlang [[NIFs]] for [[Rust|https://www.rust-lang.org/]] using the excellent [[rustler|https://github.com/rusterlium/rustler]] library.
+You may wonder //why// we'd do that? One of the main reasons is performance. For example, a lot of [[scipy|https://www.scipy.org/]] and [[numpy|https://numpy.org/]] code is not actually written in python; instead it invokes C wrappers.
+
+I primarily write Erlang [[NIFs]] for [[Rust|https://www.rust-lang.org/]] using the excellent [[rustler|https://github.com/rusterlium/rustler]] library. The actual mathematics happens in the Rust library and we get a nice usable and pluggable interface in Erlang.
+
+[[erlang-tc]] is the latest one which I have written, it exposes rust's [[threshold-cryptography]] library and does all the cryptography heavy lifting for the [[Helium Blockchain]].
 
 {{Footer}}</pre>
 </div>
