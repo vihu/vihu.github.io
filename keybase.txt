@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/vihu
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://vihu.github.io
+  * I am vihu (https://keybase.io/vihu) on keybase.
+  * I have a public key ASBxUtlpmkany7qbuwiOh-Xb1dY4ojREu59zC4D-iT3UYQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120a048f019137bd02334576c6e8a5fc242bc651e66efc22147cf7a5aac3e382e3c0a",
+      "host": "keybase.io",
+      "kid": "01207152d9699a46a7cbba9bbb088e87e5dbd5d638a23444bb9f730b80fe893dd4610a",
+      "uid": "9a93b6db80ffa2a4ff5f47bef06ac919",
+      "username": "vihu"
+    },
+    "merkle_root": {
+      "ctime": 1646767480,
+      "hash": "c0def8e55ac3cf19e0ec78c2b2ef8abd72cd14f68397910ef3cc442febc37d851ced1ebeac59f4ac6c613f2e87e2f0596851ebd7d4a0b19d36de97e3361fcde6",
+      "hash_meta": "13bbe4d914042234472cf60bf0ac4a70b7cbdd0f63906c02dd25e75f3331d297",
+      "seqno": 22032389
+    },
+    "service": {
+      "entropy": "PAzcuVh0/C5eJwrSjlUTvv+s",
+      "hostname": "vihu.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.9.3"
+  },
+  "ctime": 1646767593,
+  "expire_in": 504576000,
+  "prev": "bafe9f6df8a60ce562f758e30652ce9335122845f4e5c25b46544586ff02467a",
+  "seqno": 84,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgcVLZaZpGp8u6m7sIjofl29XWOKI0RLufcwuA/ok91GEKp3BheWxvYWTESpcCVMQguv6fbfimDOVi91jjBlLOkzUSKEX05cJbRlRFhv8CRnrEIMiYG90UIjk2j39S2L1y/9T45SYirTG0A7bo9NfSemB5AgHCo3NpZ8RAmddv4o1LZErK4jp9yJYaBe27bux5pM0theWLrKpAIsv/P/ABjmJ6hUC+m+1+TaDLKYspiX6AUcTi8cU2uaeWBKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJjkG7EB4MKsD5mbEdD8v8yndi+iZUwfbHY/F3pbKEVHo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/vihu
+
+==================================================================
