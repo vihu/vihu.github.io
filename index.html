@@ -245,6 +245,8 @@ Error message and password prompt
 
 <li>blockchain-core</li>
 
+<li>blog-gogo</li>
+
 <li>Blogs</li>
 
 <li>Contact me</li>
@@ -10531,7 +10533,7 @@ Projects
 <div created="20210712051118891" creator="v" modified="20210712051119150" modifier="vih" title="$:/status/UserName">
 <pre>vihu</pre>
 </div>
-<div created="20230316172156974" creator="vihu" list="Hello! Blogs Projects [[Contact me]]" modified="20230316172238908" modifier="vihu" title="$:/StoryList">
+<div list="blog-gogo Hello! Projects [[Contact me]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210711063517735" modified="20210711072645676" title="$:/theme">
@@ -10698,8 +10700,74 @@ This is one of my ''main'' [[Work Projects]]!
 
 {{Footer}}</pre>
 </div>
-<div created="20230316172214608" creator="vihu" modified="20230316172248142" modifier="vihu" tags="shared" title="Blogs">
-<pre>Here's the full list of blogs I've written:
+<div created="20230316172716097" creator="vihu" modified="20230316173542774" modifier="vihu" tags="blog" title="blog-gogo">
+<pre>! Gogo: A mnemonic terminal URL opener and bookmark manager
+
+As developers, we spend a lot of time in the terminal. We often have a set of go-to websites that we visit frequently - whether it's documentation, Stack Overflow, or our favorite programming tools. But typing out the full URL each time can be tedious and error-prone. That's where Gogo comes in - a minimalistic terminal-based bookmark manager that allows you to open your most frequently visited websites with a simple mnemonic command.
+
+!! The Problem with Traditional Bookmark Managers
+
+Traditional bookmark managers rely on a graphical interface and mouse input, which can be inconvenient for developers who spend most of their time in the terminal. While browser extensions can streamline the process of bookmarking and opening websites, they can also be distracting or clunky. In contrast, Gogo is a simple and efficient way to manage your bookmarks without leaving the terminal.
+
+!! How Gogo Works
+
+Gogo is written in Rust and uses a SQLite database to store bookmarks. This makes it a lightweight and portable solution for managing bookmarks from the command line. To get started, simply install Gogo using Rust's package manager Cargo:
+
+```
+cargo install gogo
+```
+
+After installation, Gogo requires a few environmental variables to be set up. First, export GOGODB_PATH to the path where you want to store your bookmarks. For example:
+
+
+```
+export GOGODB_PATH=$HOME/.config/gogo.sqlite
+```
+
+Next, set your preferred browser by running 
+
+```
+gogo set_browser /path/to/browser
+```
+
+This will allow Gogo to open websites in your preferred browser automatically.
+
+!! Adding bookmarks with Gogo
+
+Adding a bookmark with Gogo is straightforward. Run `gogo add &lt;name&gt; &lt;url&gt;` to create a new bookmark. For example:
+
+```
+gogo add gh https://github.com
+```
+
+Now, you can open GitHub in your set browser by running: `gogo gh`.
+
+Gogo also supports search queries for websites that allow it. For example, to search for Rust packages on Crates.io, run:
+
+```
+gogo search cr serde
+```
+
+This will construct the URL `https://crates.io/search?q=serde` and open it in the browser.
+
+!! Managing bookmarks with Gogo
+
+Gogo provides several commands to managing bookmarks:
+
+* `gogo ls`: List all bookmarks in a table format
+* `gogo check &lt;name&gt;`: Check the URL associated with a given bookmark.
+* `gogo rm &lt;name&gt;`: Remove a bookmark.
+* `gogo import &lt;path&gt;`: Import bookmarks from a CSV file.
+* `gogo export`: Export bookmarks to a CSV file.
+
+All subcommands have their own help sections, which you can access with `gogo &lt;subcommand&gt; --help`
+
+!! Conclusion
+
+Gogo is a useful tool for developers who want quick and easy access to frequently visited websites from the terminal. With its simple mnemonic commands and lightweight implementation, Gogo provides a streamlined way to manage bookmarks without leaving the command line. If you're tired of typing out long URLs or relying on a clunky bookmark manager, give Gogo a try.</pre>
+</div>
+<div created="20230316171934421" creator="vihu" modified="20230316172105440" modifier="vihu" title="Blogs">
+<pre>I try to write some blogs when I get some free time. Here's the full list of //blogs// I've written:
 
 &lt;&lt;list-links &quot;[tag[Blogs]field:proj-type[blog]]&quot;&gt;&gt;
 
